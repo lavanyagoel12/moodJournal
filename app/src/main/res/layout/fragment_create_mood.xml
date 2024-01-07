@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateMoodFragment">
+
+    <top.defaults.colorpicker.ColorWheelView
+        android:id="@+id/colorPicker"
+        android:layout_width="320dp"
+        android:layout_height="316dp"
+        android:layout_marginTop="16dp"
+        app:enableAlpha="true"
+        app:enableBrightness="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/pickedColor"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colorPicker" />
+
+    <TextView
+        android:id="@+id/textColorHex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pickedColor"
+        app:layout_constraintStart_toEndOf="@+id/pickedColor"
+        app:layout_constraintTop_toTopOf="@+id/pickedColor" />
+
+    <TextView
+        android:id="@+id/textMoodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/name_of_emotion"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/pickedColor"
+        app:layout_constraintTop_toBottomOf="@+id/pickedColor" />
+
+    <EditText
+        android:id="@+id/editTextMoodName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:inputType="text"
+        android:paddingEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textMoodName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textMoodName"
+        app:layout_constraintTop_toTopOf="@+id/textMoodName" />
+
+    <TextView
+        android:id="@+id/textEmotionType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/is_this_emotion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textMoodName" />
+
+    <Button
+        android:id="@+id/buttonCreateMood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textEmotionType">
+
+        <RadioButton
+            android:id="@+id/radioPositive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#990CC31E"
+            android:buttonTint="#000000"
+            android:paddingHorizontal="8dp"
+            android:text="@string/positive"
+            android:textColor="#000000" />
+
+        <RadioButton
+            android:id="@+id/radioNeutral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:background="#99B8B8B8"
+            android:buttonTint="#000000"
+            android:paddingHorizontal="8dp"
+            android:text="@string/neutral" />
+
+        <RadioButton
+            android:id="@+id/radioNegative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#99F13939"
+            android:buttonTint="#000000"
+            android:paddingHorizontal="8dp"
+            android:text="@string/negative"
+            android:textColor="#000000" />
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
